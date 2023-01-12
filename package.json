@@ -1,0 +1,23 @@
+{
+  "name": "exbanking-service-perf-test",
+  "version": "1.0.0",
+  "description": "exbanking-service-perf-test non-functional performance test suite",
+  "main": "perf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiwanthaL/exbanking-service-perf-test.git"
+  },
+  "keywords": [
+    "yolo",
+    "assignment"
+  ],
+  "author": "shiwanthaL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shiwanthaL/exbanking-service-perf-test/issues"
+  },
+  "homepage": "https://github.com/shiwanthaL/exbanking-service-perf-test#readme"
+}
