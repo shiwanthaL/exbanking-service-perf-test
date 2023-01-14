@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/shiwanthaL/exbanking-service-perf-test/issues"
   },
-  "homepage": "https://github.com/shiwanthaL/exbanking-service-perf-test#readme"
+  "homepage": "https://github.com/shiwanthaL/exbanking-service-perf-test#readme",
+  "dependencies": {
+    "k6-html-reporter": "^1.0.5"
+  }
 }
