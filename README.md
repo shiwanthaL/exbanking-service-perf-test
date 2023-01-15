@@ -1,6 +1,12 @@
 # exbanking-service-perf-test
 *exbanking-service-perf-test* non-functional perf test suite will make sure the performance benchmark accuracy of Exbanking gRPC service endpoints. In addition, it will make sure that there will be no performance hits during integration and delivery in the code level. And during the gRPC performance test, the framework will make sure that the thresholds and checkpoint of non-functional quality gates will not get violated.
 
+<p align="center">
+  <a href="vimeo.com/user192124250/">
+    <img alt="Exbank gRPC (Non-functional Test) with K6" src="bin/img.png" width="100%" height="75%" />
+  </a>
+</p>
+
 ## Step 01 : Install K6 in Local Machine
 Windows User : Click on the link [K6 Downlaod .exe](https://dl.k6.io/msi/k6-latest-amd64.msi)
 
@@ -58,7 +64,7 @@ Execute Exbanking service level smoke test suite
 ```
 ![img.png](bin/report-gen.png)
 
-## Step 05 : Analysis Execution Result (Threshold & Checks & Metrics)
+## Step 05 : Analysis Execution Result (Threshold, Checks & Metrics)
 Execution result will generate under root directory folder called "YOLOReport"
 Open :radioactive: **report.html** file in browser and do analysis perf statistics.
 
