@@ -1,5 +1,5 @@
 # exbanking-service-perf-test
-*exbanking-service-perf-test* automated suite will maintain Exbanking service grpc functional test cases. This gRPC functional test automation project is a combination of JavaScript programming language and Cypress.io In addition, to enable a grpc mock  client, a customized solution with @grpc/proto-loader and @grpc/grpc-js npm lib are being used in this async test automation platform.
+*exbanking-service-perf-test* non-functional perf test suite will make sure the performance benchmark accuracy of Exbanking gRPC service endpoints. In addition, it will make sure that there will be no performance hits during integration and delivery in the code level. And during the gRPC performance test, the framework will make sure that the thresholds and checkpoint of non-functional quality gates will not get violated.
 
 ## Step 01 : Install K6 in Local Machine
 Windows User : Click on the link [K6 Downlaod .exe](https://dl.k6.io/msi/k6-latest-amd64.msi)
@@ -12,7 +12,7 @@ $ k6 -v
 ```
 ![img.png](bin/k6.png)
 
-## Step 01 : Clone gRPC Non-Functional Perf Test Project
+## Step 02 : Clone gRPC Non-Functional Perf Test Project
 Clone [exbanking-service-perf-test](https://github.com/shiwanthaL/exbanking-service-perf-test) github project in your running machine
 ```bash
 $ git clone https://github.com/shiwanthaL/exbanking-service-perf-test.git
@@ -21,7 +21,10 @@ Install package.json dependencies by staying root directory
 ```bash
 $ npm install
 ```
-## Step 02 : gRPC Server Setup and Installation
+### Project structure
+Understand gRPC non-functional service test project major folder hierarchy
+![img.png](bin/pro-strucutre.png)
+## Step 03 : gRPC Server Setup and Installation
 As a Prerequisite to execute non-functional perf testcases, please follow below instructions to get up and running Exbank gRPC endpoint,
 
 1. Open separate bach (cmd) window on project root directory
@@ -30,8 +33,9 @@ As a Prerequisite to execute non-functional perf testcases, please follow below 
 ```bash
 $ java -jar exbanking-service-protobuf-endpoints.jar
 ```
+![img.png](bin/grpc-server.png)
 
-## Step 03 : Execute Exbank service level Non-functional Perf Testcases
+## Step 04 : Execute Exbank service level Non-functional Perf Testcases
 
 Open new bash terminal and go to :radioactive: **exbanking-service-perf-test root directory** using separate bash and execute below commands
 ```bash
@@ -43,7 +47,13 @@ $ k6 run .\get_balance_benchmark_test.js
 ```
 ![img.png](bin/k6-execute.png)
 
-## Step 04 : Analysis Execution Result (Threshold & Checks & Metrics)
+### Generate Detail Summary Report
+```bash
+$ node .\reportConfig.js
+```
+![img.png](bin/report-gen.png)
+
+## Step 05 : Analysis Execution Result (Threshold & Checks & Metrics)
 Execution result will generate under root directory folder called "YOLOReport"
 Open :radioactive: **report.html** file in browser and do analysis perf statistics.
 
