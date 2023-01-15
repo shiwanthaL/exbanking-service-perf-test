@@ -17,16 +17,15 @@ const api_get_balance = "BankingService/get_balance";
 
 export const options = {
     // Configure less load distribution for benchmark, ramp period is 500ms gap between each hits (each 1s 2 user will hit the api) during 5sec
-    // So, total hits 5s x 2 -> 10 hits  (2 hits per second)
-    //vus: 2,
+    // So, total execution time duration 25s and 1st 5s will release 2 vue uses and next 15s will release 5 vue uses to maintain consistency, after that execution will terminate within next 5s
     stages: [
-        { target: 2, duration: '5s' },
-        { target: 5, duration: '15s' },
-        { target: 0, duration: '5s' },
+        { target: 2, duration: '5s' }, //Accelerate stage (outliers)
+        { target: 5, duration: '15s' }, //Cool stage
+        { target: 0, duration: '5s' }, //Termination Stage (outliers)
     ],
     thresholds: {
         //Evaluates whether 95 percent of responses happen within a certain duration
-        grpc_req_duration: ['p(95)<500'], // 95% of requests should be below 10ms - threshold
+        grpc_req_duration: ['p(95)<500'], // 95% of requests should be below 500ms - threshold
     },
 };
 
@@ -55,8 +54,12 @@ export function teardown(data) {
  *        - full_name , account , amount
  *
  *  - 95% population (normal distribution 95 percentile) server response should below 500ms time slot
+ *
+ *  Limitation: since this is sample project always same user details will access server to hit the request, and ram-up period
+ *  also not that much realistic since very short time execution for demo purpose.
  */
 export default () => {
+
     // Connect with localhost:9090 exbanking grpc server
     connectTo(host);
 
