@@ -3,9 +3,10 @@
 
 ## Step 01 : Install K6 in Local Machine
 Windows User : Click on the link [K6 Downlaod .exe](https://dl.k6.io/msi/k6-latest-amd64.msi)
+
 MAC/Linux Users : Download from official site [K6 Installer](https://k6.io/docs/get-started/installation/)
 
-Once download and install .exe make sure K6 setup installation successful with below commond
+Once download and install .exe make sure K6 setup installation successful :radioactive: with below commond
 ```bash
 $ k6 -v
 ```
@@ -25,14 +26,14 @@ As a Prerequisite to execute non-functional perf testcases, please follow below 
 
 1. Open separate bach (cmd) window on project root directory
 
-2. Get up and running gRPC service endpoints using below command (***Don't close terminal until perf testcases execution complete***)
+2. Get up and running gRPC service endpoints using below command :radioactive: (***Don't close terminal until perf testcases execution complete***)
 ```bash
 $ java -jar exbanking-service-protobuf-endpoints.jar
 ```
 
 ## Step 03 : Execute Exbank service level Non-functional Perf Testcases
 
-Open new bash terminal and go to :warning: **exbanking-service-perf-test root directory** using separate bash and execute below commands
+Open new bash terminal and go to :radioactive: **exbanking-service-perf-test root directory** using separate bash and execute below commands
 ```bash
 $ npm install
 ```
@@ -44,11 +45,11 @@ $ k6 run .\get_balance_benchmark_test.js
 
 ## Step 04 : Analysis Execution Result (Threshold & Checks & Metrics)
 Execution result will generate under root directory folder called "YOLOReport"
-Open **report.html** file in browser and do analysis perf statistics.
+Open :radioactive: **report.html** file in browser and do analysis perf statistics.
 
 ![img.png](bin/k6-report.png)
 
-Note: For reporting purpose 2 check points has deliberately failed while execution with assert fail.
+**Note:** For reporting purpose 2 check points has deliberately failed while execution and below context covered in results
 - 1 Threshold Validation = :white_check_mark:
 - 2 Passed Check Points (Assert) = :white_check_mark:
 - 2 Failed Check Points (Assert) = :white_check_mark:
@@ -56,3 +57,14 @@ Note: For reporting purpose 2 check points has deliberately failed while executi
 - Metrics : Cumulative throughput = :white_check_mark:
 - Metrics : Calculated statistics (min/ max/ avg/ percentile) = :white_check_mark:
 - Metrics : Virtual users gen. behaviours = :white_check_mark:
+- Console Display Req,Res details and Metrics = :white_check_mark:
+- Result in .json format for dashboard integration (datadog, grafana, etc..) = :white_check_mark:
+- Dynamic load gen. with implicit data reaction (setup/teardown) = :white_check_mark:
+- Demonstrate 'load-test(benchmark type)' project here but, extensible for volume-test/stress-test/soak-test = :white_check_mark:
+
+---
+
+**Tools & NPM Used major libraries :**  [K6](https://k6.io/docs/)  |  [k6-html-reporter](https://www.npmjs.com/package/k6-html-reporter) 
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
