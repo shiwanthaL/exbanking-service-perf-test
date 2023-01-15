@@ -43,6 +43,6 @@ export default () => {
 
 export function handleSummary(data) {
     return {
-      'report/summary.json': JSON.stringify(data), //the default data object
+      'YOLOReport/summary.json': JSON.stringify(data), //the default data object
     };
 }

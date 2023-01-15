@@ -1,8 +1,8 @@
 const reporter = require('k6-html-reporter');
 
 const options = {
-        jsonFile: "report/summary.json",
-        output: "report",
+        jsonFile: "YOLOReport/summary.json",
+        output: "YOLOReport",
     };
 
 reporter.generateSummaryReport(options);
