@@ -1,11 +1,14 @@
 # exbanking-service-perf-test
 *exbanking-service-perf-test* non-functional perf test suite will make sure the performance benchmark accuracy of Exbanking gRPC service endpoints. In addition, it will make sure that there will be no performance hits during integration and delivery in the code level. And during the gRPC performance test, the framework will make sure that the thresholds and checkpoint of non-functional quality gates will not get violated.
-
+## Project demo gRPC protobuf Load test with K6
+<div>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
 <p align="center">
-  <a href="vimeo.com/user192124250/">
-    <img alt="Exbank gRPC (Non-functional Test) with K6" src="bin/img.png" width="100%" height="75%" />
+  <a href="https://player.vimeo.com/video/789449287">
+    <img alt="Exbank gRPC (Non-functional Test) with K6" src="bin/img.png" width="75%" height="50%" />
   </a>
 </p>
+
+<div>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
 
 ## Step 01 : Install K6 in Local Machine
 Windows User : Click on the link [K6 Downlaod .exe](https://dl.k6.io/msi/k6-latest-amd64.msi)
