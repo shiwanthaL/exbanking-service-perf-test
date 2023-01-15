@@ -1,6 +1,7 @@
 # exbanking-service-perf-test
 *exbanking-service-perf-test* non-functional perf test suite will make sure the performance benchmark accuracy of Exbanking gRPC service endpoints. In addition, it will make sure that there will be no performance hits during integration and delivery in the code level. And during the gRPC performance test, the framework will make sure that the thresholds and checkpoint of non-functional quality gates will not get violated.
-## Project demo gRPC protobuf Load test with K6
+
+## Project Demo gRPC Protobuf Load Test with K6
 
 <p align="center">
   <a href="https://player.vimeo.com/video/789449287">
