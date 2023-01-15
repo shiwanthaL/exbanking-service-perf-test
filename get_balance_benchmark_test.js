@@ -19,8 +19,8 @@ export const options = {
     // Configure less load distribution for benchmark, ramp period is 500ms gap between each hits (each 1s 2 user will hit the api) during 5sec
     // So, total execution time duration 25s and 1st 5s will release 2 vue uses and next 15s will release 5 vue uses to maintain consistency, after that execution will terminate within next 5s
     stages: [
-        { target: 2, duration: '5s' }, //Accelerate stage (outliers)
-        { target: 5, duration: '15s' }, //Cool stage
+        { target: 15, duration: '5s' }, //Accelerate stage (outliers)
+        { target: 15, duration: '15s' }, //Cool stage
         { target: 0, duration: '5s' }, //Termination Stage (outliers)
     ],
     thresholds: {
