@@ -48,13 +48,13 @@ Open new bash terminal and go to :radioactive: **exbanking-service-perf-test roo
 ```
 Execute Exbanking service level smoke test suite
 ```bash
-> k6 run .\get_balance_benchmark_test.js
+> k6 run get_balance_benchmark_test.js
 ```
 ![img.png](bin/k6-execute.png)
 
 ### Generate Detail Summary Report
 ```bash
-> node .\reportConfig.js
+> node reportConfig.js
 ```
 ![img.png](bin/report-gen.png)
 
