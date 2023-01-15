@@ -17,7 +17,7 @@ MAC/Linux Users : Download from official site [K6 Installer](https://k6.io/docs/
 
 Prerequisites:
 ```bash
-Java JDK
+Java JDK  (Support Java 11 or above)
 Node.js
 ```
 Once downloaded and installed, open bash terminal and give following command to make sure that K6 setup installation is successful. ☢️
