@@ -6,32 +6,37 @@ Windows User : Click on the link [K6 Downlaod .exe](https://dl.k6.io/msi/k6-late
 
 MAC/Linux Users : Download from official site [K6 Installer](https://k6.io/docs/get-started/installation/)
 
-Once download and install .exe make sure K6 setup installation successful :radioactive: with below commond
+Prerequisites:
 ```bash
-$ k6 -v
+Java JDK
+Node.js
+```
+Once downloaded and installed, open bash terminal and give following command to make sure that K6 setup installation is successful. ☢️
+```bash
+> k6 -v
 ```
 ![img.png](bin/k6.png)
 
 ## Step 02 : Clone gRPC Non-Functional Perf Test Project
 Clone [exbanking-service-perf-test](https://github.com/shiwanthaL/exbanking-service-perf-test) github project in your running machine
 ```bash
-$ git clone https://github.com/shiwanthaL/exbanking-service-perf-test.git
+> git clone https://github.com/shiwanthaL/exbanking-service-perf-test.git
 ```
 Install package.json dependencies by staying root directory
 ```bash
-$ npm install
+> npm install
 ```
 ### Project structure
 Understand gRPC non-functional service test project major folder hierarchy
 ![img.png](bin/pro-strucutre.png)
 ## Step 03 : gRPC Server Setup and Installation
-As a Prerequisite to execute non-functional perf testcases, please follow below instructions to get up and running Exbank gRPC endpoint,
+As a Prerequisite to execute non-functional performance testcases, please follow below instructions to get up and running Exbank gRPC endpoint,
 
-1. Open separate bach (cmd) window on project root directory
+1. Open separate bash (cmd) window on project root directory
 
-2. Get up and running gRPC service endpoints using below command :radioactive: (***Don't close terminal until perf testcases execution complete***)
+2. Get up and running gRPC service endpoints using below command :radioactive: (***Don't close terminal until performance testcases execution complete***)
 ```bash
-$ java -jar exbanking-service-protobuf-endpoints.jar
+> java -jar exbanking-service-protobuf-endpoints.jar
 ```
 ![img.png](bin/grpc-server.png)
 
@@ -39,17 +44,17 @@ $ java -jar exbanking-service-protobuf-endpoints.jar
 
 Open new bash terminal and go to :radioactive: **exbanking-service-perf-test root directory** using separate bash and execute below commands
 ```bash
-$ npm install
+> npm install
 ```
 Execute Exbanking service level smoke test suite
 ```bash
-$ k6 run .\get_balance_benchmark_test.js
+> k6 run .\get_balance_benchmark_test.js
 ```
 ![img.png](bin/k6-execute.png)
 
 ### Generate Detail Summary Report
 ```bash
-$ node .\reportConfig.js
+> node .\reportConfig.js
 ```
 ![img.png](bin/report-gen.png)
 

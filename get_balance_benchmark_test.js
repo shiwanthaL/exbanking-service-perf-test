@@ -18,8 +18,12 @@ const api_get_balance = "BankingService/get_balance";
 export const options = {
     // Configure less load distribution for benchmark, ramp period is 500ms gap between each hits (each 1s 2 user will hit the api) during 5sec
     // So, total hits 5s x 2 -> 10 hits  (2 hits per second)
-    vus: 2,
-    duration: "5s",
+    //vus: 2,
+    stages: [
+        { target: 2, duration: '5s' },
+        { target: 5, duration: '15s' },
+        { target: 0, duration: '5s' },
+    ],
     thresholds: {
         //Evaluates whether 95 percent of responses happen within a certain duration
         grpc_req_duration: ['p(95)<500'], // 95% of requests should be below 10ms - threshold
